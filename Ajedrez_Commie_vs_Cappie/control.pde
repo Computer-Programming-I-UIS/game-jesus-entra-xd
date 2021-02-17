@@ -38,10 +38,10 @@ void mousePressed() {
     abajo1 = round(mouseY / (height/8)-0.5);
     derecha1 = round(mouseX / (width/8)-0.5);
     if (validMove(abajo, derecha, abajo1, derecha1, turn, Tablero) && !incheck(abajo, derecha, abajo1, derecha1, turn)) {
-      check = false;//stop showing check
-      Tablero = movePiece(abajo, derecha, abajo1, derecha1, true, Tablero);//move piece
+      check = false;
+      Tablero = movePiece(abajo, derecha, abajo1, derecha1, true, Tablero);//movimiento de pieza 
       click = false;
-    } else {//change piece
+    } else {//cambio de pieza
       abajo = abajo1;
       derecha= derecha1;
       click = true;
