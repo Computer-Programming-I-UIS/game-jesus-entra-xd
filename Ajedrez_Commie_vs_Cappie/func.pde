@@ -1,29 +1,29 @@
 boolean possible(int abajo, int derecha, int abajo1, int derecha1, int d, int r, boolean side, PImage[][] Tablero) {
   for (int i = derecha+ r, j  = abajo + d; i < 8 && j < 8 && i >= 0 && j >= 0; i+= r, j+= d) {
     if (side == BLANCO) {
-      if (BLANCO(j, i, Tablero)) break;
-      if (NEGRO(j, i, Tablero)) {
-        if (i == derecha1 && j == abajo1)return true;
+      if (BLANCO(j, i, Tablero)) break;//once diagon reaches BLANCO
+      if (NEGRO(j, i, Tablero)) {//once diagon reaches NEGRO
+        if (i == derecha1 && j == abajo1)return true;//kill first NEGRO
         break;
       }
     } else {
-      if (NEGRO(j, i, Tablero)) break;
-      if (BLANCO(j, i, Tablero)) {
-        if (i == derecha1 && j == abajo1)return true;
+      if (NEGRO(j, i, Tablero)) break;//once direction reaches NEGRO
+      if (BLANCO(j, i, Tablero)) {//once direction reaches BLANCO
+        if (i == derecha1 && j == abajo1)return true;//kill first BLANCO
         break;
       }
     }
-    if (i == derecha1 && j == abajo1)return true;
+    if (i == derecha1 && j == abajo1)return true;//no piece
   }
   return false;
 }
 
 boolean NEGRO (int abajo1, int derecha1, PImage[][] Tablero) {
-  return (Tablero[abajo1][derecha1] == bReina || Tablero[abajo1][derecha1] == bCaballo || Tablero[abajo1][derecha1] == bPeon || 
+  return (Tablero[abajo1][derecha1] == bReina || Tablero[abajo1][derecha1] == bCaballero  || Tablero[abajo1][derecha1] == bPeon || 
     Tablero[abajo1][derecha1] == bTorre || Tablero[abajo1][derecha1] == bAlfil || Tablero[abajo1][derecha1] == bRey);
 }
 boolean BLANCO (int abajo1, int derecha1, PImage[][] Tablero) {
-  return (Tablero[abajo1][derecha1] == wReina || Tablero[abajo1][derecha1] == wCaballo || Tablero[abajo1][derecha1] == wPeon || 
+  return (Tablero[abajo1][derecha1] == wReina || Tablero[abajo1][derecha1] == wCaballero  || Tablero[abajo1][derecha1] == wPeon || 
     Tablero[abajo1][derecha1] == wTorre || Tablero[abajo1][derecha1] == wAlfil || Tablero[abajo1][derecha1] == wRey);
 }
 boolean noNEGRO (int abajo1, int derecha1, PImage[][] Tablero) {
@@ -34,38 +34,38 @@ boolean noBLANCO (int abajo1, int derecha1, PImage[][] Tablero) {
 }
 
 boolean validMove(int abajo, int derecha, int abajo1, int derecha1, boolean side, PImage[][] Tablero) {
-  if (side == BLANCO) {
+  if (side == BLANCO) {//BLANCO
     if (Tablero[abajo][derecha] == wPeon && !promote) {
-      if (derecha1 == derecha&& abajo1 == abajo-1 && Tablero[abajo-1][derecha] == null) { 
+      if (derecha1 == derecha&& abajo1 == abajo-1 && Tablero[abajo-1][derecha] == null) { // move forward 1
         return true;
-      } else if (derecha1 == derecha&& abajo1 == abajo-2) {
+      } else if (derecha1 == derecha&& abajo1 == abajo-2) {// move forward 2
         if (abajo == 6 && Tablero[abajo-1][derecha] == null && Tablero[abajo-2][derecha] == null) {
           return true;
         }
       }
-      if (derecha!= 7) {
+      if (derecha!= 7) {//take
         if (NEGRO(abajo-1, derecha+1, Tablero)) {
           if (abajo1 == abajo-1 && derecha1 == derecha+1) return true;
         }
-        if (abajo == 3 && Tablero[p01][p11] == bPeon && p01 == p0 + 2 && p1 == derecha+ 1) {
+        if (abajo == 3 && Tablero[p01][p11] == bPeon && p01 == p0 + 2 && p1 == derecha+ 1) {//en passant
           if (abajo1 == abajo-1 && derecha1 == derecha+1) return true;
         }
       }
-      if (derecha!= 0) {
+      if (derecha!= 0) {//take
         if (NEGRO(abajo-1, derecha-1, Tablero)) {
           if (abajo1 == abajo-1 && derecha1 == derecha-1) return true;
         }
-        if (abajo == 3 && Tablero[p01][p11] == bPeon && p01 == p0 + 2 && p1 == derecha- 1) {
+        if (abajo == 3 && Tablero[p01][p11] == bPeon && p01 == p0 + 2 && p1 == derecha- 1) {//en passant
           if (abajo1 == abajo-1 && derecha1 == derecha- 1) return true;
         }
       }
     } else if (Tablero[abajo][derecha] == wRey) {
-      if (abs(derecha- derecha1) <= 1 && abs(abajo - abajo1) <= 1) {
+      if (abs(derecha- derecha1) <= 1 && abs(abajo - abajo1) <= 1) {//move
         if (noBLANCO(abajo1, derecha1, Tablero)) {
           return true;
         }
       }
-      if (!wReyMoved && !check) {
+      if (!wReyMoved && !check) {//castle
         if (Tablero[7][3] == null && Tablero[7][2] == null && Tablero[7][1] == null &&
           abajo1 == 7 && derecha1 == 2 && wTorreMoved1 == false) {
           if (!incheck(abajo, derecha, 7, 3, turn)) {
@@ -79,53 +79,53 @@ boolean validMove(int abajo, int derecha, int abajo1, int derecha1, boolean side
           }
         }
       }
-    } else if (Tablero[abajo][derecha] == wCaballo) {
+    } else if (Tablero[abajo][derecha] == wCaballero ) {
       if ((abs(abajo1 - abajo) == 2 && abs(derecha1 - derecha) == 1) ||
         (abs(abajo1 - abajo) == 1 && abs(derecha1 - derecha) == 2)) {
         if (noBLANCO(abajo1, derecha1, Tablero)) return true;
       }
     } else if (Tablero[abajo][derecha] == wAlfil) {      
-      if (possible(abajo, derecha, abajo1, derecha1, 1, 1, BLANCO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, 1, -1, BLANCO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, -1, 1, BLANCO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, -1, -1, BLANCO, Tablero)) return true;
+      if (possible(abajo, derecha, abajo1, derecha1, 1, 1, BLANCO, Tablero)) return true;//bottom derecha
+      if (possible(abajo, derecha, abajo1, derecha1, 1, -1, BLANCO, Tablero)) return true;//top derecha
+      if (possible(abajo, derecha, abajo1, derecha1, -1, 1, BLANCO, Tablero)) return true;//bottom izquierda
+      if (possible(abajo, derecha, abajo1, derecha1, -1, -1, BLANCO, Tablero)) return true;//top izquierda
     } else if (Tablero[abajo][derecha] == wTorre) {
-      if (possible(abajo, derecha, abajo1, derecha1, 0, 1, BLANCO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, 0, -1, BLANCO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, 1, 0, BLANCO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, -1, 0, BLANCO, Tablero)) return true;
+      if (possible(abajo, derecha, abajo1, derecha1, 0, 1, BLANCO, Tablero)) return true;//derecha
+      if (possible(abajo, derecha, abajo1, derecha1, 0, -1, BLANCO, Tablero)) return true;//izquierda
+      if (possible(abajo, derecha, abajo1, derecha1, 1, 0, BLANCO, Tablero)) return true;//abajo
+      if (possible(abajo, derecha, abajo1, derecha1, -1, 0, BLANCO, Tablero)) return true;//up
     } else if (Tablero[abajo][derecha] == wReina) {
-      if (possible(abajo, derecha, abajo1, derecha1, 1, 1, BLANCO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, -1, 1, BLANCO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, 1, -1, BLANCO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, -1, -1, BLANCO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, 0, 1, BLANCO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, 0, -1, BLANCO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, 1, 0, BLANCO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, -1, 0, BLANCO, Tablero)) return true;
+      if (possible(abajo, derecha, abajo1, derecha1, 1, 1, BLANCO, Tablero)) return true;//bottom derecha
+      if (possible(abajo, derecha, abajo1, derecha1, -1, 1, BLANCO, Tablero)) return true;//top derecha
+      if (possible(abajo, derecha, abajo1, derecha1, 1, -1, BLANCO, Tablero)) return true;//bottom izquierda
+      if (possible(abajo, derecha, abajo1, derecha1, -1, -1, BLANCO, Tablero)) return true;//top izquierda
+      if (possible(abajo, derecha, abajo1, derecha1, 0, 1, BLANCO, Tablero)) return true;//derecha
+      if (possible(abajo, derecha, abajo1, derecha1, 0, -1, BLANCO, Tablero)) return true;//izquierda
+      if (possible(abajo, derecha, abajo1, derecha1, 1, 0, BLANCO, Tablero)) return true;//abajo
+      if (possible(abajo, derecha, abajo1, derecha1, -1, 0, BLANCO, Tablero)) return true;//up
     }
   } else {
     if (Tablero[abajo][derecha] == bPeon && !promote) {
-      if (derecha1 == derecha&& abajo1 == abajo+1 && Tablero[abajo+1][derecha] == null) { 
+      if (derecha1 == derecha&& abajo1 == abajo+1 && Tablero[abajo+1][derecha] == null) { // move forward 1
         return true;
-      } else if (derecha1 == derecha&& abajo1 == abajo+2) {
+      } else if (derecha1 == derecha&& abajo1 == abajo+2) {// move forward 2
         if (abajo == 1 && Tablero[abajo+1][derecha] == null && Tablero[abajo+2][derecha] == null) {
           return true;
         }
       }
-      if (derecha!= 7) {
+      if (derecha!= 7) {//take
         if (BLANCO(abajo1, derecha1, Tablero)) {
           if (abajo1 == abajo+1 && derecha1 == derecha+ 1) return true;
         }
-        if (abajo == 4 && Tablero[p01][p11] == wPeon && p01 == p0 - 2 && p1 == derecha+ 1) {
+        if (abajo == 4 && Tablero[p01][p11] == wPeon && p01 == p0 - 2 && p1 == derecha+ 1) {//en passant
           if (abajo1 == abajo+1 && derecha1 == derecha+ 1) return true;
         }
       }
-      if (derecha!= 0) {
+      if (derecha!= 0) {//take
         if (BLANCO(abajo1, derecha1, Tablero)) {
           if (abajo1 == abajo+1 && derecha1 == derecha- 1) return true;
         }
-        if (abajo == 4 && Tablero[p01][p11] == wPeon && p01 == p0 - 2 && p1 == derecha- 1) {
+        if (abajo == 4 && Tablero[p01][p11] == wPeon && p01 == p0 - 2 && p1 == derecha- 1) {//en pasant
           if (abajo1 == abajo+1 && derecha1 == derecha- 1) return true;
         }
       }
@@ -149,30 +149,30 @@ boolean validMove(int abajo, int derecha, int abajo1, int derecha1, boolean side
           }
         }
       }
-    } else if (Tablero[abajo][derecha] == bCaballo) {
+    } else if (Tablero[abajo][derecha] == bCaballero ) {
       if ((abs(abajo1 - abajo) == 2 && abs(derecha1 - derecha) == 1) ||
         (abs(abajo1 - abajo) == 1 && abs(derecha1 - derecha) == 2)) {
         if (noNEGRO(abajo1, derecha1, Tablero)) return true;
       }
     } else if (Tablero[abajo][derecha] == bAlfil) {     
-      if (possible(abajo, derecha, abajo1, derecha1, 1, 1, NEGRO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, 1, -1, NEGRO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, -1, 1, NEGRO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, -1, -1, NEGRO, Tablero)) return true;
+      if (possible(abajo, derecha, abajo1, derecha1, 1, 1, NEGRO, Tablero)) return true;//inferior derecha 
+      if (possible(abajo, derecha, abajo1, derecha1, 1, -1, NEGRO, Tablero)) return true;//superior derecha
+      if (possible(abajo, derecha, abajo1, derecha1, -1, 1, NEGRO, Tablero)) return true;//inferior izquierda
+      if (possible(abajo, derecha, abajo1, derecha1, -1, -1, NEGRO, Tablero)) return true;//superior izquierda
     } else if (Tablero[abajo][derecha] == bTorre) {
-      if (possible(abajo, derecha, abajo1, derecha1, 0, 1, NEGRO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, 0, -1, NEGRO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, 1, 0, NEGRO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, -1, 0, NEGRO, Tablero)) return true;
+      if (possible(abajo, derecha, abajo1, derecha1, 0, 1, NEGRO, Tablero)) return true;//derecha
+      if (possible(abajo, derecha, abajo1, derecha1, 0, -1, NEGRO, Tablero)) return true;//izquierda
+      if (possible(abajo, derecha, abajo1, derecha1, 1, 0, NEGRO, Tablero)) return true;//abajo
+      if (possible(abajo, derecha, abajo1, derecha1, -1, 0, NEGRO, Tablero)) return true;//arriba
     } else if (Tablero[abajo][derecha] == bReina) {
-      if (possible(abajo, derecha, abajo1, derecha1, 1, 1, NEGRO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, -1, 1, NEGRO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, 1, -1, NEGRO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, -1, -1, NEGRO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, 0, 1, NEGRO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, 0, -1, NEGRO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, 1, 0, NEGRO, Tablero)) return true;
-      if (possible(abajo, derecha, abajo1, derecha1, -1, 0, NEGRO, Tablero)) return true;
+      if (possible(abajo, derecha, abajo1, derecha1, 1, 1, NEGRO, Tablero)) return true;//inferior derecha
+      if (possible(abajo, derecha, abajo1, derecha1, -1, 1, NEGRO, Tablero)) return true;// superior derecha 
+      if (possible(abajo, derecha, abajo1, derecha1, 1, -1, NEGRO, Tablero)) return true;// inferior izquierda 
+      if (possible(abajo, derecha, abajo1, derecha1, -1, -1, NEGRO, Tablero)) return true;//superior izquierda 
+      if (possible(abajo, derecha, abajo1, derecha1, 0, 1, NEGRO, Tablero)) return true;//derecha
+      if (possible(abajo, derecha, abajo1, derecha1, 0, -1, NEGRO, Tablero)) return true;//izquierda
+      if (possible(abajo, derecha, abajo1, derecha1, 1, 0, NEGRO, Tablero)) return true;//abajo
+      if (possible(abajo, derecha, abajo1, derecha1, -1, 0, NEGRO, Tablero)) return true;//arriba
     }
   }
   return false;
@@ -190,7 +190,7 @@ boolean incheck(int abajo, int derecha, int abajo1, int derecha1, boolean side) 
   }
   return false;
 }
-boolean mate(boolean side) {
+boolean mate(boolean side) {//movimientos invalidos 
   for (int k = 0; k<8; k++) {
     for (int l = 0; l<8; l++) {
       if (side == BLANCO) {

@@ -7,8 +7,8 @@ void loadfichas(){
   bPeon = loadImage("data/Peon1.jpg");
   wTorre = loadImage("data/Torre.jpg");
   bTorre = loadImage("data/Torre1.jpg");
-  wCaballo = loadImage("data/Caballo.jpg");
-  bCaballo = loadImage("data/Caballo1.jpg");
+  wCaballero  = loadImage("data/Caballo.jpg");
+  bCaballero  = loadImage("data/Caballo1.jpg");
   wAlfil = loadImage("data/Alfil.jpg");
   bAlfil = loadImage("data/Alfil1.jpg");
   wRey.resize(width/8, height/8);
@@ -19,8 +19,8 @@ void loadfichas(){
   bPeon.resize(width/8, height/8);
   wTorre.resize(width/8, height/8);  
   bTorre.resize(width/8, height/8); 
-  wCaballo.resize(width/8, height/8);
-  bCaballo.resize(width/8, height/8);
+  wCaballero .resize(width/8, height/8);
+  bCaballero .resize(width/8, height/8);
   wAlfil.resize(width/8, height/8);  
   bAlfil.resize(width/8, height/8);
   

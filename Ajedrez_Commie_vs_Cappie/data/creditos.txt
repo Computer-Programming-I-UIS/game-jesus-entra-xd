@@ -1,0 +1,37 @@
+************************************************************************************ 
+                      CREDITOS
+        ( pula M para volver al menu principal )
+                    Programadores
+
+              Jesus Daniel Mejia Villar
+            Jose Mauel Bonivento Hernandez
+
+                     Productores
+
+              Jesus Daniel Mejia Villar
+            Jose Mauel Bonivento Hernandez
+
+                     Diseñadores
+
+              Jesus Daniel Mejia Villar
+            Jose Mauel Bonivento Hernandez  
+
+                    Colaboradores
+
+          Cristian de Jesús Chavez Choperena
+           Josser Giovanny De Luque Salcedo  
+
+
+               Mensaje de agracedimiento
+
+     Gracias por darle una oportunidad a nuestro juego,
+     esperamos que haya sido de su total agrado y que
+     hayan podido pasar un buen rato con la tematica en
+     el cual este se desarrolla. 
+
+****************************************************************************************************  
+
+
+
+
+  

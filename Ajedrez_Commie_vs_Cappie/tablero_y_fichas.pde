@@ -3,15 +3,15 @@ void mostrarTablero() {
     for (int j = 0; j<8; j++) { 
       if ((i+j)%2 == 0) fill(#e1ff59);
       else fill(#cc3c37);
-      rect(i*width/8, j*height/8, width/8, height/8);
-      if (Tablero[j][i] != null) image(Tablero[j][i], i*width/8, j*height/8);
+      rect(i*width/8, j*height/8, width/8, height/8);//Tablero
+      if (Tablero[j][i] != null) image(Tablero[j][i], i*width/8, j*height/8);//pieza
       if (click) {
         if (validMove(abajo, derecha, j, i, turn, Tablero) && !incheck(abajo, derecha, j, i, turn)) {
-          fill(0, 255, 0, 100);
+          fill(0, 255, 0, 100);//Movimientos posibles en verde
           rect(i*width/8, j*height/8, width/8, height/8);
         }
         if (j == abajo && i == derecha&& Tablero[j][i] != null) {
-          fill(0, 0, 255, 100);
+          fill(0, 0, 255, 100);//pieza actual en azul
           rect(i*width/8, j*height/8, width/8, height/8);
         }
       }
@@ -31,12 +31,12 @@ void mostrarTablero() {
       image(wReina, 0.5*width/8, 3.5*height/8);
       image(wTorre, 2.5*width/8, 3.5*height/8);
       image(wAlfil, 4.5*width/8, 3.5*height/8);
-      image(wCaballo, 6.5*width/8, 3.5*height/8);
+      image(wCaballero , 6.5*width/8, 3.5*height/8);
     } else {
       image(bReina, 0.5*width/8, 3.5*height/8);
       image(bTorre, 2.5*width/8, 3.5*height/8);
       image(bAlfil, 4.5*width/8, 3.5*height/8);
-      image(bCaballo, 6.5*width/8, 3.5*height/8);
+      image(bCaballero , 6.5*width/8, 3.5*height/8);
     }
     noStroke();
   }
@@ -47,12 +47,12 @@ void PosInicial() {
   Tablero = new PImage[8][8];
 
   Tablero[0][0] = bTorre;
-  Tablero[0][1] = bCaballo;
+  Tablero[0][1] = bCaballero ;
   Tablero[0][2] = bAlfil;
   Tablero[0][3] = bReina;
   Tablero[0][4] = bRey;
   Tablero[0][5] = bAlfil;
-  Tablero[0][6] = bCaballo;
+  Tablero[0][6] = bCaballero ;
   Tablero[0][7] = bTorre;
   Tablero[1][0] = bPeon;
   Tablero[1][1] = bPeon;
@@ -64,12 +64,12 @@ void PosInicial() {
   Tablero[1][7] = bPeon;
 
   Tablero[7][0] = wTorre;
-  Tablero[7][1] = wCaballo;
+  Tablero[7][1] = wCaballero ;
   Tablero[7][2] = wAlfil;
   Tablero[7][3] = wReina;
   Tablero[7][4] = wRey;
   Tablero[7][5] = wAlfil;
-  Tablero[7][6] = wCaballo;
+  Tablero[7][6] = wCaballero ;
   Tablero[7][7] = wTorre;
   Tablero[6][0] = wPeon;
   Tablero[6][1] = wPeon;
@@ -80,7 +80,7 @@ void PosInicial() {
   Tablero[6][6] = wPeon;
   Tablero[6][7] = wPeon;
 
-  
+  //Variables globales
   abajo=derecha=abajo1=derecha1=-1;
   p0=p1=p01=p11=-1;
   click = false;

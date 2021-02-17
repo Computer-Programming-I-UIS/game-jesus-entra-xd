@@ -19,29 +19,29 @@ void mousePressed() {
       if (x == 0) Tablero[abajo1][derecha1] = wReina;
       if (x == 1) Tablero[abajo1][derecha1] = wTorre;
       if (x == 2) Tablero[abajo1][derecha1] = wAlfil;
-      if (x == 3) Tablero[abajo1][derecha1] = wCaballo;
+      if (x == 3) Tablero[abajo1][derecha1] = wCaballero ;
     } else {
       if (x == 0) Tablero[abajo1][derecha1] = bReina;
       if (x == 1) Tablero[abajo1][derecha1] = bTorre;
       if (x == 2) Tablero[abajo1][derecha1] = bAlfil;
-      if (x == 3) Tablero[abajo1][derecha1] = bCaballo;
+      if (x == 3) Tablero[abajo1][derecha1] = bCaballero ;
     }
     promote = false;
     check = false;
-    if (Check(turn, Tablero)) {
+    if (Check(turn, Tablero)) {// cuando el rey esta bajo ataque 
       check = true;
     }
-    if (mate(turn)) {
+    if (mate(turn)) {// esto es para movimientos ilegales del ajedrez clasico
       gameOver = true;
     }
   } else if (click) {
     abajo1 = round(mouseY / (height/8)-0.5);
     derecha1 = round(mouseX / (width/8)-0.5);
     if (validMove(abajo, derecha, abajo1, derecha1, turn, Tablero) && !incheck(abajo, derecha, abajo1, derecha1, turn)) {
-      check = false;
-      Tablero = movePiece(abajo, derecha, abajo1, derecha1, true, Tablero);
+      check = false;//stop showing check
+      Tablero = movePiece(abajo, derecha, abajo1, derecha1, true, Tablero);//move piece
       click = false;
-    } else {
+    } else {//change piece
       abajo = abajo1;
       derecha= derecha1;
       click = true;
@@ -67,7 +67,7 @@ PImage[][] movePiece(int i0, int j0, int i1, int j1, boolean update, PImage[][] 
     } else if (i1 == 2 && abs(j1 - j0) == 1 && Tablero[i1][j1] == null) {
       Tablero[i1 + 1][j1] = null;
     }
-  } else if (Tablero[i0][j0] == bPeon) {
+  } else if (Tablero[i0][j0] == bPeon) {//promocion peon NEGRO
     if (i1 == 7) {
       if (update) promote = true;
     } else if (i1 == 5 && abs(j1 - j0) == 1 && Tablero[i1][j1] == null) {
@@ -104,14 +104,14 @@ PImage[][] movePiece(int i0, int j0, int i1, int j1, boolean update, PImage[][] 
       if (!bTorreMoved2 && j0 == 7) bTorreMoved2 = true;
     }
   }
-  Tablero[i1][j1] = Tablero[i0][j0];
-  Tablero[i0][j0] = null;
+  Tablero[i1][j1] = Tablero[i0][j0];//mover pieza
+  Tablero[i0][j0] = null;//remover pieza original 
 
   if (update) {
-    if (Check(!turn, Tablero)) {
+    if (Check(!turn, Tablero)) {//Rey en Jake
       check = true;
     }
-    if (mate(!turn)) {
+    if (mate(!turn)) {//sin movimientos legales 
       gameOver = true;
     }
     turn = !turn;
