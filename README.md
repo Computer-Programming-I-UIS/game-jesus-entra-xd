@@ -39,10 +39,10 @@ Los dos bandos que manejamos en el juego son:
  **- Ejercito Rojo:** El ejercito mas conocido por el comunismo, un ejercito formado por campesinos que buscaban derrotar a los militares para mejorar sus condiciones de vida.          Cumpliran el importante rol de "Peones". 
  
 **Capitalistas**
+
+**- Donald Trump:** Empresario, magnate, presidente n°45 de Estados Unidos, cuestionado muchas veces por sus comentarios. Su rol es de "Rey".
  
- **- Uribe:** Dueño parcial de Colombia, incita al pueblo a cumplir sus ordenes. Cumple el papel de "Rey".
- 
- **- Donald Trump:** Empresario, magnate, presidente n°45 de Estados Unidos, cuestionado muchas veces por sus comentarios. Su rol es de "Reina".
+ **- Uribe:** Dueño parcial de Colombia, incita al pueblo a cumplir sus ordenes. Cumple el papel de "Reina".
  
  **- Microsoft:** Empresa productora de tecnologia multinacional productora de software, produce alrededor de 145 mil muellones de dolares. Su rol es el juego es de "Alfíl".
  
