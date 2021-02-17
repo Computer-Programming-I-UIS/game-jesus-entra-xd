@@ -16,15 +16,15 @@ void mousePressed() {
   if (promote) {
     int x = round(mouseX/ (width/4)-0.5);
     if (!turn == BLANCO) {
-      if (x == 0) Tablero[abajo1][derecha1] = wQueen;
-      if (x == 1) Tablero[abajo1][derecha1] = wRook;
-      if (x == 2) Tablero[abajo1][derecha1] = wBishop;
-      if (x == 3) Tablero[abajo1][derecha1] = wKnight;
+      if (x == 0) Tablero[abajo1][derecha1] = wReina;
+      if (x == 1) Tablero[abajo1][derecha1] = wTorre;
+      if (x == 2) Tablero[abajo1][derecha1] = wAlfil;
+      if (x == 3) Tablero[abajo1][derecha1] = wCaballo;
     } else {
-      if (x == 0) Tablero[abajo1][derecha1] = bQueen;
-      if (x == 1) Tablero[abajo1][derecha1] = bRook;
-      if (x == 2) Tablero[abajo1][derecha1] = bBishop;
-      if (x == 3) Tablero[abajo1][derecha1] = bKnight;
+      if (x == 0) Tablero[abajo1][derecha1] = bReina;
+      if (x == 1) Tablero[abajo1][derecha1] = bTorre;
+      if (x == 2) Tablero[abajo1][derecha1] = bAlfil;
+      if (x == 3) Tablero[abajo1][derecha1] = bCaballo;
     }
     promote = false;
     check = false;
@@ -61,47 +61,47 @@ PImage[][] movePiece(int i0, int j0, int i1, int j1, boolean update, PImage[][] 
     p01 = i1; 
     p11 = j1;
   }
-  if (Tablero[i0][j0] == wPawn) {
+  if (Tablero[i0][j0] == wPeon) {
     if (i1 == 0) {
       if (update) promote = true;
     } else if (i1 == 2 && abs(j1 - j0) == 1 && Tablero[i1][j1] == null) {
       Tablero[i1 + 1][j1] = null;
     }
-  } else if (Tablero[i0][j0] == bPawn) {
+  } else if (Tablero[i0][j0] == bPeon) {
     if (i1 == 7) {
       if (update) promote = true;
     } else if (i1 == 5 && abs(j1 - j0) == 1 && Tablero[i1][j1] == null) {
       Tablero[i1 - 1][j1] = null;
     }
-  } else if (Tablero[i0][j0] == wKing) {
-    if (wKingMoved == false && j1 == 2) {
+  } else if (Tablero[i0][j0] == wRey) {
+    if (wReyMoved == false && j1 == 2) {
       Tablero[7][0] = null;
-      Tablero[7][3] = wRook;
+      Tablero[7][3] = wTorre;
     }
-    if (wKingMoved == false && j1 == 6) {
+    if (wReyMoved == false && j1 == 6) {
       Tablero[7][7] = null;
-      Tablero[7][5] = wRook;
+      Tablero[7][5] = wTorre;
     }
-    if (update)wKingMoved = true;
-  } else if (Tablero[i0][j0] == bKing) {
-    if (bKingMoved == false && j1 == 2) {
+    if (update)wReyMoved = true;
+  } else if (Tablero[i0][j0] == bRey) {
+    if (bReyMoved == false && j1 == 2) {
       Tablero[0][0] = null;
-      Tablero[0][3] = bRook;
+      Tablero[0][3] = bTorre;
     }
-    if (bKingMoved == false && j1 == 6) {
+    if (bReyMoved == false && j1 == 6) {
       Tablero[0][7] = null;
-      Tablero[0][5] = bRook;
+      Tablero[0][5] = bTorre;
     }
-    if (update)bKingMoved = true;
-  } else if (Tablero[i0][j0] == wRook) {
+    if (update)bReyMoved = true;
+  } else if (Tablero[i0][j0] == wTorre) {
     if (update) {
-      if (!wRookMoved1 && j0 == 0) wRookMoved1 = true;
-      if (!wRookMoved2 && j0 == 7) wRookMoved2 = true;
+      if (!wTorreMoved1 && j0 == 0) wTorreMoved1 = true;
+      if (!wTorreMoved2 && j0 == 7) wTorreMoved2 = true;
     }
-  } else if (Tablero[i0][j0] == bRook) {
+  } else if (Tablero[i0][j0] == bTorre) {
     if (update) {
-      if (!bRookMoved1 && j0 == 0) bRookMoved1 = true;
-      if (!bRookMoved2 && j0 == 7) bRookMoved2 = true;
+      if (!bTorreMoved1 && j0 == 0) bTorreMoved1 = true;
+      if (!bTorreMoved2 && j0 == 7) bTorreMoved2 = true;
     }
   }
   Tablero[i1][j1] = Tablero[i0][j0];

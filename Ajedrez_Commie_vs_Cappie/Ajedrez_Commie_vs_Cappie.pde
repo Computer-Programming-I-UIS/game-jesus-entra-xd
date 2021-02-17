@@ -6,10 +6,10 @@ boolean BLANCO = true;
 boolean NEGRO = false;
 boolean turn;
 boolean gameOver;
-boolean wKingMoved, bKingMoved, wRookMoved1, bRookMoved1, wRookMoved2, bRookMoved2;
+boolean wReyMoved, bReyMoved, wTorreMoved1, bTorreMoved1, wTorreMoved2, bTorreMoved2;
 boolean check;
 boolean promote;
-PImage wKing, bKing, wQueen, bQueen, wPawn, bPawn, wRook, bRook, wKnight, bKnight, wBishop, bBishop;
+PImage wRey, bRey, wReina, bReina, wPeon, bPeon, wTorre, bTorre, wCaballo, bCaballo, wAlfil, bAlfil;
 PImage[][] Tablero;
 
 void setup() {
@@ -29,7 +29,7 @@ void draw() {
   if (gameOver) {
     fill(255, 0, 0);
     if (check) text("JAKE MATE", 0, height/2, width, height);
-    else text("STALEMATE", 0, height/2, width, height);
+    else text("Rey Ahogado", 0, height/2, width, height);
   }
   }else if(game==0){
    menu();

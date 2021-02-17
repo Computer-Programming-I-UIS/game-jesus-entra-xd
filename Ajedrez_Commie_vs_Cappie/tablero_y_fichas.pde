@@ -28,15 +28,15 @@ void mostrarTablero() {
     rect(4*width/8, 0, 2*width/8, height);
     rect(6*width/8, 0, 2*width/8, height);
     if (!turn) {
-      image(wQueen, 0.5*width/8, 3.5*height/8);
-      image(wRook, 2.5*width/8, 3.5*height/8);
-      image(wBishop, 4.5*width/8, 3.5*height/8);
-      image(wKnight, 6.5*width/8, 3.5*height/8);
+      image(wReina, 0.5*width/8, 3.5*height/8);
+      image(wTorre, 2.5*width/8, 3.5*height/8);
+      image(wAlfil, 4.5*width/8, 3.5*height/8);
+      image(wCaballo, 6.5*width/8, 3.5*height/8);
     } else {
-      image(bQueen, 0.5*width/8, 3.5*height/8);
-      image(bRook, 2.5*width/8, 3.5*height/8);
-      image(bBishop, 4.5*width/8, 3.5*height/8);
-      image(bKnight, 6.5*width/8, 3.5*height/8);
+      image(bReina, 0.5*width/8, 3.5*height/8);
+      image(bTorre, 2.5*width/8, 3.5*height/8);
+      image(bAlfil, 4.5*width/8, 3.5*height/8);
+      image(bCaballo, 6.5*width/8, 3.5*height/8);
     }
     noStroke();
   }
@@ -46,39 +46,39 @@ void mostrarTablero() {
 void PosInicial() {
   Tablero = new PImage[8][8];
 
-  Tablero[0][0] = bRook;
-  Tablero[0][1] = bKnight;
-  Tablero[0][2] = bBishop;
-  Tablero[0][3] = bQueen;
-  Tablero[0][4] = bKing;
-  Tablero[0][5] = bBishop;
-  Tablero[0][6] = bKnight;
-  Tablero[0][7] = bRook;
-  Tablero[1][0] = bPawn;
-  Tablero[1][1] = bPawn;
-  Tablero[1][2] = bPawn; 
-  Tablero[1][3] = bPawn;
-  Tablero[1][4] = bPawn;
-  Tablero[1][5] = bPawn;
-  Tablero[1][6] = bPawn;
-  Tablero[1][7] = bPawn;
+  Tablero[0][0] = bTorre;
+  Tablero[0][1] = bCaballo;
+  Tablero[0][2] = bAlfil;
+  Tablero[0][3] = bReina;
+  Tablero[0][4] = bRey;
+  Tablero[0][5] = bAlfil;
+  Tablero[0][6] = bCaballo;
+  Tablero[0][7] = bTorre;
+  Tablero[1][0] = bPeon;
+  Tablero[1][1] = bPeon;
+  Tablero[1][2] = bPeon; 
+  Tablero[1][3] = bPeon;
+  Tablero[1][4] = bPeon;
+  Tablero[1][5] = bPeon;
+  Tablero[1][6] = bPeon;
+  Tablero[1][7] = bPeon;
 
-  Tablero[7][0] = wRook;
-  Tablero[7][1] = wKnight;
-  Tablero[7][2] = wBishop;
-  Tablero[7][3] = wQueen;
-  Tablero[7][4] = wKing;
-  Tablero[7][5] = wBishop;
-  Tablero[7][6] = wKnight;
-  Tablero[7][7] = wRook;
-  Tablero[6][0] = wPawn;
-  Tablero[6][1] = wPawn;
-  Tablero[6][2] = wPawn;
-  Tablero[6][3] = wPawn;
-  Tablero[6][4] = wPawn;
-  Tablero[6][5] = wPawn;
-  Tablero[6][6] = wPawn;
-  Tablero[6][7] = wPawn;
+  Tablero[7][0] = wTorre;
+  Tablero[7][1] = wCaballo;
+  Tablero[7][2] = wAlfil;
+  Tablero[7][3] = wReina;
+  Tablero[7][4] = wRey;
+  Tablero[7][5] = wAlfil;
+  Tablero[7][6] = wCaballo;
+  Tablero[7][7] = wTorre;
+  Tablero[6][0] = wPeon;
+  Tablero[6][1] = wPeon;
+  Tablero[6][2] = wPeon;
+  Tablero[6][3] = wPeon;
+  Tablero[6][4] = wPeon;
+  Tablero[6][5] = wPeon;
+  Tablero[6][6] = wPeon;
+  Tablero[6][7] = wPeon;
 
   
   abajo=derecha=abajo1=derecha1=-1;
@@ -86,12 +86,12 @@ void PosInicial() {
   click = false;
   turn = BLANCO;
   gameOver = false;
-  wKingMoved = false;
-  bKingMoved = false;
-  wRookMoved1 = false;
-  bRookMoved1 = false;
-  wRookMoved2 = false;
-  bRookMoved2 = false;
+  wReyMoved = false;
+  bReyMoved = false;
+  wTorreMoved1 = false;
+  bTorreMoved1 = false;
+  wTorreMoved2 = false;
+  bTorreMoved2 = false;
   check = false;
   promote = false;
 }
