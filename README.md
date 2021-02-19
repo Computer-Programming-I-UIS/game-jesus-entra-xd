@@ -50,7 +50,7 @@ Los dos bandos que manejamos en el juego son:
  
  **- Disney:** Empresa estadounidense de entretenimiento más grande del mundo, produciendo mas de 6 mil millones de dolares anuales. *Su rol es "Torre".*
  
- **- Corredores de bolsa de Wall Street:** Grupo de inversionistas con aspiraciones de hacerse ricos por medio de la gente. *Cumplen el papel de "Peones". *
+ **- Corredores de bolsa de Wall Street:** Grupo de inversionistas con aspiraciones de hacerse ricos por medio de la gente. *Cumplen el papel de "Peones".*
 
 # Créditos
 
