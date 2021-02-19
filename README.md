@@ -1,6 +1,6 @@
 # Comunismo vs. Capitalismo
 # Programadores
-*José Manuel Bonivento Hernández / Código: 2191089
+*José Manuel Bonivento Hernández / Código: 2191089*
 
 *Jesús Daniel Mejía Villar / Código: 2191080*
 # Objetivo de la actividad
@@ -26,31 +26,31 @@ Los dos bandos que manejamos en el juego son:
 
 **Comunistas**
 
- **- Karl Marx:** Creador del Marxismo, que despues evolucionaria en las ideales del comunismo. *Cumple el rol de "Rey".
+ **- Karl Marx:** Creador del Marxismo, que despues evolucionaria en las ideales del comunismo. *Cumple el rol de "Rey".*
 
- **- Che Guevara:** Icono comunista a nivel mundial, lider de la revolucion cubana. *Representa a la "Reina".
+ **- Che Guevara:** Icono comunista a nivel mundial, lider de la revolucion cubana. *Representa a la "Reina".*
 
- **- Lósif Stalin:** Protagonista y representante en la Revolucion Rusa por parte del partido comunista en la URSS. *Su rol es el del "Alfíl".
+ **- Lósif Stalin:** Protagonista y representante en la Revolucion Rusa por parte del partido comunista en la URSS. *Su rol es el del "Alfíl".*
 
- **- Hô Chi Minh:** Personaje muy importante que luchó por la Revolución de Vietnam para mejorar las condiciones de vida en su pais en contra de Francia. *Cumple el rol de "Caballo".
+ **- Hô Chi Minh:** Personaje muy importante que luchó por la Revolución de Vietnam para mejorar las condiciones de vida en su pais en contra de Francia. *Cumple el rol de "Caballo".*
  
- **- Fidel Castro:** Lider de la revolución cubana, luchó por acabar con la desigualdad de su pais y las imposiciones de las potencias mundiales capitalistas. *Es la "Torre".
+ **- Fidel Castro:** Lider de la revolución cubana, luchó por acabar con la desigualdad de su pais y las imposiciones de las potencias mundiales capitalistas. *Es la "Torre".*
  
- **- Ejercito Rojo:** El ejercito mas conocido por el comunismo, un ejercito formado por campesinos que buscaban derrotar a los militares para mejorar sus condiciones de vida.          *Cumpliran el importante rol de "Peones". 
+ **- Ejercito Rojo:** El ejercito mas conocido por el comunismo, un ejercito formado por campesinos que buscaban derrotar a los militares para mejorar sus condiciones de vida.          *Cumpliran el importante rol de "Peones".* 
  
 **Capitalistas**
 
-**- Donald Trump:** Empresario, magnate, presidente n°45 de Estados Unidos, cuestionado muchas veces por sus comentarios. *Su rol es de "Rey".
+**- Donald Trump:** Empresario, magnate, presidente n°45 de Estados Unidos, cuestionado muchas veces por sus comentarios. *Su rol es de "Rey".*
  
- **- Uribe:** Dueño parcial de Colombia, incita al pueblo a cumplir sus ordenes. *Cumple el papel de "Reina".
+ **- Uribe:** Dueño parcial de Colombia, incita al pueblo a cumplir sus ordenes. *Cumple el papel de "Reina".*
  
- **- Microsoft:** Empresa productora de tecnologia multinacional productora de software, produce alrededor de 145 mil muellones de dolares. *Su rol es el juego es de "Alfíl".
+ **- Microsoft:** Empresa productora de tecnologia multinacional productora de software, produce alrededor de 145 mil muellones de dolares. *Su rol es el juego es de "Alfíl".*
  
- **- Apple:** Empresa estadounidense productora de software y equipos electronicos, produciendo mas de 67 mil millones de dorales. *Teniendo un rol de "Caballo".
+ **- Apple:** Empresa estadounidense productora de software y equipos electronicos, produciendo mas de 67 mil millones de dorales. *Teniendo un rol de "Caballo".*
  
- **- Disney:** Empresa estadounidense de entretenimiento más grande del mundo, produciendo mas de 6 mil millones de dolares anuales. *Su rol es "Torre".
+ **- Disney:** Empresa estadounidense de entretenimiento más grande del mundo, produciendo mas de 6 mil millones de dolares anuales. *Su rol es "Torre".*
  
- **- Corredores de bolsa de Wall Street:** Grupo de inversionistas con aspiraciones de hacerse ricos por medio de la gente. *Cumplen el papel de "Peones". 
+ **- Corredores de bolsa de Wall Street:** Grupo de inversionistas con aspiraciones de hacerse ricos por medio de la gente. *Cumplen el papel de "Peones". *
 
 # Créditos
 
