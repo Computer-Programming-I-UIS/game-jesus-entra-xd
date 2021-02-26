@@ -19,6 +19,10 @@ del contrario hasta realizar un Jaque-Mate, todo esto haciendo uso de una temati
 -Juegos de Estrategia
 
 -Juegos de Mesa
+# Clasificación
+Debido a la sensibilidad de los temas politicos que maneja el juego, este está clasificado para personas de 13 años o más
+
+![Logo](https://imgur.com/QEPbrry.jpg)
 # Descripción
 Demuestra que eres un total estratega de los juegos clásicos y lleva a nuestro héroe Karl Marx y a sus subordinados a combatir contra el capitalismo, consigue derotar al rival
 con tus movimientos y gritale ¡Jaque-Mate! a la desigualdad en el mundo y consigue mejorar la calidad de vida de todas las personas.
