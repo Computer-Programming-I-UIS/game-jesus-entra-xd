@@ -1,4 +1,7 @@
 # Comunismo vs. Capitalismo
+
+![Banner](https://imgur.com/8eS1Tmo.jpg)
+
 # Programadores
 *José Manuel Bonivento Hernández / Código: 2191089*
 
