@@ -27,7 +27,8 @@ Debido a la sensibilidad de los temas politicos que maneja el juego, este está 
 Demuestra que eres un total estratega de los juegos clásicos y lleva a nuestro héroe Karl Marx y a sus subordinados a combatir contra el capitalismo, consigue derotar al rival
 con tus movimientos y gritale ¡Jaque-Mate! a la desigualdad en el mundo y consigue mejorar la calidad de vida de todas las personas.
 # Instrucciones
-El juego posee las mismas reglas que el clásico juego de ajedrez, utiliza tus mejores maniobras para dejar sin movimientos al rival dejando a su Rey sin movimientos posibles. 
+El juego posee las mismas reglas que el clásico juego de ajedrez, utiliza tus mejores maniobras para dejar sin movimientos al rival dejando a su Rey sin movimientos posibles.
+Tambien pueden visitar el siguiente link, donde podran ver un tutorial para aprender a jugar ajedrez. https://www.youtube.com/watch?v=x4R2EPkYzZk
 # Personajes
 Los dos bandos que manejamos en el juego son: 
 
